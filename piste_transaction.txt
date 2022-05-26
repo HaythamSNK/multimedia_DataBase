@@ -1,0 +1,11 @@
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+
+/* Affichage des pistes et Album en se basant sur une categorie donne/
+
+SELECT P.numPiste, P.numAlbum, titre,duree 
+From Piste P,Album A, PisteApourCategorie C
+where P.numAlbum = A.numAlbum 
+and C.numAlbum = A.numAlbum 
+and P.numAlbum = C.numAlbum
+and categorie = 'rap'
+Commit;

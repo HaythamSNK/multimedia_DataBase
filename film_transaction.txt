@@ -1,0 +1,15 @@
+SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+/* on reccupere l'age et languede preferences de l'utilisateur */
+SELECT Age, LangueUtilisateur 
+from Utilisateur
+ where Mail = email;
+
+
+/* Affichage film selon la categorie donnee*/
+
+SELECT  titre, anneeSortie, Resume, MinAge 
+From (Film natural Join FilmAPourcategorie)
+where Categorie = 'Action'
+and 14 >=Film.MinAge;
+
+Commit;
